@@ -34,8 +34,8 @@
             <h3 v-else-if="winner === 'player'">You Won!</h3>
             <h3 v-else-if="winner === 'draw'">It's a draw!</h3>
             <button @click="startGame">New Game</button>
-        </section>
-        <section id="controls" v-else>
+        </section>qq
+        <section id="controls" v-else>      
             <button @click="attackMonster">ATTACK</button>
             <button :disabled="isDisabled" @click="specialAttackMonster">SPECIAL ATTACK</button>
             <button @click="healPlayer">HEAL</button>
@@ -43,7 +43,9 @@
         </section>
         <section id="log" class="container">
             <h2>Battle Log</h2>
-            <ul></ul>
+            <ul>
+                <li v-for="log in logMessages">{{log.action}} - {{log.actionType}} - {{log.actionValue}}</li>
+            </ul>
         </section>
     </div>
 </body>
